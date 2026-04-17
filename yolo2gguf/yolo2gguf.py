@@ -63,7 +63,7 @@ def main():
             if not data.flags.c_contiguous:
                 data = np.ascontiguousarray(data)
 
-                writer.add_tensor(name, data)
+            writer.add_tensor(name, data)
             print(f"  Added tensor: {name} | shape: {data.shape} | dtype: {data.dtype}")
         else:
             print(f"  Skipping {name} (not a torch.Tensor, type: {type(tensor)})")
