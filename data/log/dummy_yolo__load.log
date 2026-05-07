@@ -1,0 +1,17 @@
+Loading model from: ../data/gguf/dummy_yolo.gguf
+GGUF version: 3
+Number of tensors: 4
+Number of KV pairs: 3
+
+Key-Value Pairs:
+  0: general.architecture
+  1: general.name
+  2: general.description
+
+Tensors:
+  0: conv1.weight         [    3,     3,     3,    16] type=f32
+  1: conv1.bias           [   16,     1,     1,     1] type=f32
+  2: fc.weight            [   16,    10,     1,     1] type=f32
+  3: fc.bias              [   10,     1,     1,     1] type=f32
+
+Model loaded and verified successfully.
