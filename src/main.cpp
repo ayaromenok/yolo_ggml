@@ -1,24 +1,27 @@
 #include "ggml.h"
 #include "gguf.h"
+#include "common.h"
 #include <cstdio>
 #include <vector>
 #include <string>
 
 int main(int argc, char ** argv) {
-    const char * fname = "../data/gguf/dummy_yolo.gguf";
-    if (argc > 1) {
-        fname = argv[1];
+    app_params params;
+    if (!app_params_parse(argc, argv, params)) {
+        return 1;
     }
+
+    const char * fname = params.model.c_str();
 
     printf("Loading model from: %s\n", fname);
 
     struct ggml_context * ctx_data = NULL;
-    struct gguf_init_params params = {
+    struct gguf_init_params gguf_params = {
         /*.no_alloc = */ false,
         /*.ctx      = */ &ctx_data,
     };
 
-    struct gguf_context * ctx_gguf = gguf_init_from_file(fname, params);
+    struct gguf_context * ctx_gguf = gguf_init_from_file(fname, gguf_params);
     if (!ctx_gguf) {
         fprintf(stderr, "Failed to load GGUF file: %s\n", fname);
         return 1;

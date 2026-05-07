@@ -10,7 +10,10 @@ set(GGML_CUDA_LIB_DIR /home/az/sdk/build/ggml/cuda/src/ggml-cuda)
 
 include_directories(${GGML_INCLUDE_DIR})
 
-add_executable(yolo_ggml src/main.cpp)
+add_executable(yolo_ggml 
+    src/main.cpp
+    src/common.cpp
+)
 
 # Libraries to link
 find_library(GGML_LIB ggml PATHS ${GGML_LIB_DIR} NO_DEFAULT_PATH)
