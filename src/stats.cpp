@@ -4,8 +4,10 @@
 void yolo_stats::print(FILE* f) const {
     fprintf(f, "--- Statistics ---\n");
     fprintf(f, "GGUF Model Name:     %s\n", model_name.c_str());
+    fprintf(f, "GGML Backend:        %s\n", backend_name.c_str());
     fprintf(f, "GGUF Model Size:     %.2f MB\n", model_size / (1024.0 * 1024.0));
-    fprintf(f, "GGML Allocated Mem:  %.2f MB (of %.2f MB buf)\n", mem_used / (1024.0 * 1024.0), mem_total / (1024.0 * 1024.0));
+    fprintf(f, "GGML CPU Allocated:  %.2f MB (of %.2f MB buf)\n", mem_used / (1024.0 * 1024.0), mem_total / (1024.0 * 1024.0));
+    fprintf(f, "GGML Backend Mem:    %.2f MB used\n", backend_mem_used / (1024.0 * 1024.0));
     if (iterations > 1) {
         fprintf(f, "Benchmark Iterations: %d\n", iterations);
         fprintf(f, "Total Time:          %.2f ms\n", inference_time_ms);
@@ -28,12 +30,17 @@ void yolo_stats::save_to_file(const std::string& filename) const {
     }
 }
 
-yolo_stats collect_stats(const std::string& model_path, struct ggml_context* ctx, double duration_ms, size_t buf_size, int iterations) {
+yolo_stats collect_stats(const std::string& model_path, const std::string& backend_name, 
+                         struct ggml_context* ctx, double duration_ms, size_t buf_size, 
+                         size_t backend_mem_used, size_t backend_mem_total, int iterations) {
     yolo_stats s;
     s.model_name = std::filesystem::path(model_path).filename().string();
+    s.backend_name = backend_name;
     s.model_size = std::filesystem::file_size(model_path);
     s.mem_used = ggml_used_mem(ctx);
     s.mem_total = buf_size;
+    s.backend_mem_used = backend_mem_used;
+    s.backend_mem_total = backend_mem_total;
     s.inference_time_ms = duration_ms;
     s.iterations = iterations;
     return s;

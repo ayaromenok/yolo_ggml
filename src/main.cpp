@@ -1,4 +1,6 @@
 #include "ggml.h"
+#include "ggml-cuda.h"
+#include "ggml-cpu.h"
 #include "gguf.h"
 #include "common.h"
 #include "tga.h"
@@ -251,30 +253,67 @@ std::map<int, std::string> load_labels(const std::string& filename) {
 
 // GGML Model Wrapper
 struct yolo_model {
-    struct ggml_context * ctx_data;
-    struct gguf_context * ctx_gguf;
+    struct ggml_context * ctx_data = nullptr;
+    struct gguf_context * ctx_gguf = nullptr;
+    ggml_backend_t backend = nullptr;
+    ggml_backend_buffer_t buffer = nullptr;
     std::map<std::string, struct ggml_tensor *> tensors;
 
     ~yolo_model() {
         if (ctx_gguf) gguf_free(ctx_gguf);
         if (ctx_data) ggml_free(ctx_data);
+        if (buffer) ggml_backend_buffer_free(buffer);
+        if (backend) ggml_backend_free(backend);
     }
 };
 
 bool load_model(yolo_model& model, const std::string& fname) {
+    // Try CUDA first, then CPU
+    model.backend = ggml_backend_cuda_init(0);
+    if (!model.backend) {
+        printf("CUDA not found, falling back to CPU\n");
+        model.backend = ggml_backend_cpu_init();
+    } else {
+        printf("Using CUDA backend\n");
+    }
+
+    if (!model.backend) {
+        fprintf(stderr, "Failed to initialize GGML backend\n");
+        return false;
+    }
+
     struct gguf_init_params params = {
-        /* .no_alloc = */ false,
+        /* .no_alloc = */ true,
         /* .ctx      = */ &model.ctx_data,
     };
     model.ctx_gguf = gguf_init_from_file(fname.c_str(), params);
     if (!model.ctx_gguf) return false;
 
+    // Allocate tensors on the backend
+    model.buffer = ggml_backend_alloc_ctx_tensors(model.ctx_data, model.backend);
+    
+    // Open file to read tensor data
+    FILE * f = fopen(fname.c_str(), "rb");
+    if (!f) return false;
+
+    size_t data_offset = gguf_get_data_offset(model.ctx_gguf);
+    
     for (int i = 0; i < gguf_get_n_tensors(model.ctx_gguf); ++i) {
         const char * name = gguf_get_tensor_name(model.ctx_gguf, i);
         struct ggml_tensor * t = ggml_get_tensor(model.ctx_data, name);
+        
+        size_t tensor_offset = gguf_get_tensor_offset(model.ctx_gguf, i);
+        fseek(f, data_offset + tensor_offset, SEEK_SET);
+        
+        void * temp_buf = malloc(ggml_nbytes(t));
+        fread(temp_buf, 1, ggml_nbytes(t), f);
+        ggml_backend_tensor_set(t, temp_buf, 0, ggml_nbytes(t));
+        free(temp_buf);
+        
         model.tensors[name] = t;
-        // printf("  Tensor[%d]: %s\n", i, name);
     }
+    fclose(f);
+    printf("Model loaded successfully with %zu tensors\n", model.tensors.size());
     return true;
 }
 
@@ -284,9 +323,13 @@ struct ggml_tensor * build_conv(struct ggml_context * ctx, struct ggml_tensor * 
                               int s, int p) {
     struct ggml_tensor * res = ggml_conv_2d(ctx, weight, input, s, s, p, p, 1, 1);
     if (bias) {
+        struct ggml_tensor * b = bias;
+        if (b->type != GGML_TYPE_F32) {
+            b = ggml_cast(ctx, b, GGML_TYPE_F32);
+        }
         // Reshape bias to [1, 1, OC, 1] to match [W, H, OC, 1] output of conv_2d
-        struct ggml_tensor * b = ggml_reshape_4d(ctx, bias, 1, 1, bias->ne[0], 1);
-        res = ggml_add(ctx, res, ggml_repeat(ctx, b, res));
+        b = ggml_reshape_4d(ctx, b, 1, 1, b->ne[0], 1);
+        res = ggml_add(ctx, res, b);
     }
     return res;
 }
@@ -337,9 +380,9 @@ int main(int argc, char ** argv) {
     // Prepare GGML graph    
     //64 MB - OK for N-size
     //256 MB - OK for N too L-size
-    static size_t buf_size = 384ULL * 1024 * 1024; // 384 MB - OK for X-size
+    static size_t buf_size = 2ULL * 1024 * 1024; // 384 MB - OK for X-size
     struct ggml_init_params ggml_params = {
-        buf_size, NULL, false
+        buf_size, NULL, true
     };
     struct ggml_context * ctx = ggml_init(ggml_params);
     
@@ -349,23 +392,36 @@ int main(int argc, char ** argv) {
         printf("Running benchmark with %d iterations...\n", params.iterations);
     }
     
+    size_t last_graph_size = 0;
     for (int i = 0; i < params.iterations; ++i) {
         ggml_reset(ctx);
         struct ggml_tensor * input = ggml_new_tensor_4d(ctx, GGML_TYPE_F32, YOLO_INPUT_SIZE, YOLO_INPUT_SIZE, 3, 1);
         
-        // Fill input tensor (only for the last iteration to save time, or every time for correctness)
-        // For benchmarking, we should ideally fill it every time if it's part of the pipeline.
-        float * data = (float *)input->data;
-        for (int j = 0; j < YOLO_INPUT_SIZE * YOLO_INPUT_SIZE; ++j) {
-            data[j + 0 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 0] / 255.0f;
-            data[j + 1 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 1] / 255.0f;
-            data[j + 2 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 2] / 255.0f;
-        }
-
         struct ggml_tensor * x = input;
+        struct ggml_cgraph * gf = ggml_new_graph(ctx);
         try {
             x = build_conv_block(ctx, x, model, "model.0", 2, 1);
             x = build_conv_block(ctx, x, model, "model.1", 2, 1);
+            ggml_build_forward_expand(gf, x);
+            
+            // Allocate tensors for the graph on the backend
+            ggml_backend_buffer_t graph_buf = ggml_backend_alloc_ctx_tensors(ctx, model.backend);
+            last_graph_size = ggml_backend_buffer_get_size(graph_buf);
+            
+            // Fill input tensor
+            float * input_data = (float *)malloc(ggml_nbytes(input));
+            for (int j = 0; j < YOLO_INPUT_SIZE * YOLO_INPUT_SIZE; ++j) {
+                input_data[j + 0 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 0] / 255.0f;
+                input_data[j + 1 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 1] / 255.0f;
+                input_data[j + 2 * YOLO_INPUT_SIZE * YOLO_INPUT_SIZE] = resized.data[j * 3 + 2] / 255.0f;
+            }
+            ggml_backend_tensor_set(input, input_data, 0, ggml_nbytes(input));
+            free(input_data);
+
+            ggml_backend_graph_compute(model.backend, gf);
+            
+            // Free the graph buffer at the end of iteration
+            ggml_backend_buffer_free(graph_buf);
         } catch (...) {
             if (i == 0) printf("Note: Full graph construction skipped for brevity.\n");
         }
@@ -375,7 +431,9 @@ int main(int argc, char ** argv) {
     double duration = std::chrono::duration<double, std::milli>(end_time - start_time).count();
 
     // Statistics
-    yolo_stats s = collect_stats(params.model, ctx, duration, buf_size, params.iterations);
+    size_t backend_mem_used = ggml_backend_buffer_get_size(model.buffer) + last_graph_size;
+    
+    yolo_stats s = collect_stats(params.model, ggml_backend_name(model.backend), ctx, duration, buf_size, backend_mem_used, 0, params.iterations);
     printf("\n");
     s.print(stdout);
     printf("\n");
