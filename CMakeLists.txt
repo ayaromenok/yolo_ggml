@@ -13,6 +13,7 @@ include_directories(${GGML_INCLUDE_DIR})
 add_executable(yolo_ggml 
     src/main.cpp
     src/common.cpp
+    src/stats.cpp
 )
 
 # Libraries to link

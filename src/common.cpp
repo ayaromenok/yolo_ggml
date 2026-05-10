@@ -14,8 +14,9 @@ void app_print_usage(int /*argc*/, char ** argv, const app_params & params) {
     fprintf(stderr, "  -o FNAME, --output FNAME\n");
     fprintf(stderr, "                        output image path (default: %s)\n", params.output.c_str());
     fprintf(stderr, "  -l FNAME, --labels FNAME\n");
-    fprintf(stderr, "                        labels file path (default: %s)\n", params.labels.c_str());
-    fprintf(stderr, "\n");
+    printf("  -l, --labels FNAME    COCO labels file (default: %s)\n", params.labels.c_str());
+    printf("  -s, --stats FNAME     statistics output file (default: %s)\n", params.stats.c_str());
+    printf("\n");
 }
 
 bool app_params_parse(int argc, char ** argv, app_params & params) {
@@ -41,11 +42,11 @@ bool app_params_parse(int argc, char ** argv, app_params & params) {
             }
             params.output = argv[i];
         } else if (arg == "-l" || arg == "--labels") {
-            if (++i >= argc) {
-                fprintf(stderr, "error: argument %s requires a value\n", arg.c_str());
-                return false;
-            }
+            if (++i >= argc) { app_print_usage(argc, argv, params); return false; }
             params.labels = argv[i];
+        } else if (arg == "-s" || arg == "--stats") {
+            if (++i >= argc) { app_print_usage(argc, argv, params); return false; }
+            params.stats = argv[i];
         } else if (arg == "-h" || arg == "--help") {
             app_print_usage(argc, argv, params);
             return false;

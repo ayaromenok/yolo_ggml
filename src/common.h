@@ -8,6 +8,7 @@ struct app_params {
     std::string image  = "../data/img/ancelotti_zidane_2014.tga";
     std::string output = "../data/out/output.tga";
     std::string labels = "../data/coco/ms_coco_classnames.txt";
+    std::string stats  = "../data/out/stats.txt";
 };
 
 bool app_params_parse(int argc, char ** argv, app_params & params);
