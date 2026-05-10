@@ -1,0 +1,5 @@
+#This models is too big for GitHub without using git LFS, so it can be obtained from huggingface
+#https://huggingface.co/ayaromenok/YOLO26-GGUF
+yolo26l_F16.gguf
+yolo26x_F16.gguf
+

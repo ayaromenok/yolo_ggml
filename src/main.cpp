@@ -271,7 +271,9 @@ bool load_model(yolo_model& model, const std::string& fname) {
 
     for (int i = 0; i < gguf_get_n_tensors(model.ctx_gguf); ++i) {
         const char * name = gguf_get_tensor_name(model.ctx_gguf, i);
-        model.tensors[name] = ggml_get_tensor(model.ctx_data, name);
+        struct ggml_tensor * t = ggml_get_tensor(model.ctx_data, name);
+        model.tensors[name] = t;
+        // printf("  Tensor[%d]: %s\n", i, name);
     }
     return true;
 }
@@ -282,7 +284,9 @@ struct ggml_tensor * build_conv(struct ggml_context * ctx, struct ggml_tensor * 
                               int s, int p) {
     struct ggml_tensor * res = ggml_conv_2d(ctx, weight, input, s, s, p, p, 1, 1);
     if (bias) {
-        res = ggml_add(ctx, res, ggml_repeat(ctx, bias, res));
+        // Reshape bias to [1, 1, OC, 1] to match [W, H, OC, 1] output of conv_2d
+        struct ggml_tensor * b = ggml_reshape_4d(ctx, bias, 1, 1, bias->ne[0], 1);
+        res = ggml_add(ctx, res, ggml_repeat(ctx, b, res));
     }
     return res;
 }
@@ -291,10 +295,12 @@ struct ggml_tensor * build_conv(struct ggml_context * ctx, struct ggml_tensor * 
 struct ggml_tensor * build_conv_block(struct ggml_context * ctx, struct ggml_tensor * input, 
                                     const yolo_model& model, const std::string& prefix, 
                                     int s = 1, int p = 1, bool silu = true) {
+    if (model.tensors.count(prefix + ".conv.weight") == 0) {
+        printf("Warning: weight tensor missing for %s\n", prefix.c_str());
+        throw std::runtime_error("missing tensor");
+    }
     struct ggml_tensor * w = model.tensors.at(prefix + ".conv.weight");
-    // In GGUF, we might have BN tensors. For now, we'll just use conv + bias if available.
-    // Real YOLO models in GGUF often have fused bias or separate BN params.
-    // If BN is present, we should ideally fuse them, but for this demo, we'll simplify.
+    
     struct ggml_tensor * b = nullptr;
     if (model.tensors.count(prefix + ".conv.bias")) {
         b = model.tensors.at(prefix + ".conv.bias");
@@ -328,8 +334,10 @@ int main(int argc, char ** argv) {
 
     TGAImage resized = resize_image(img, YOLO_INPUT_SIZE, YOLO_INPUT_SIZE);
     
-    // Prepare GGML graph
-    static size_t buf_size = 512 * 1024 * 1024; // 512 MB
+    // Prepare GGML graph    
+    //64 MB - OK for N-size
+    //256 MB - OK for N too L-size
+    static size_t buf_size = 384ULL * 1024 * 1024; // 384 MB - OK for X-size
     struct ggml_init_params ggml_params = {
         buf_size, NULL, false
     };
