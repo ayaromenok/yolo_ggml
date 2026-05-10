@@ -16,6 +16,7 @@ void app_print_usage(int /*argc*/, char ** argv, const app_params & params) {
     fprintf(stderr, "  -l FNAME, --labels FNAME\n");
     printf("  -l, --labels FNAME    COCO labels file (default: %s)\n", params.labels.c_str());
     printf("  -s, --stats FNAME     statistics output file (default: %s)\n", params.stats.c_str());
+    printf("  -b, --bench N         number of benchmark iterations (default: %d)\n", params.iterations);
     printf("\n");
 }
 
@@ -47,6 +48,9 @@ bool app_params_parse(int argc, char ** argv, app_params & params) {
         } else if (arg == "-s" || arg == "--stats") {
             if (++i >= argc) { app_print_usage(argc, argv, params); return false; }
             params.stats = argv[i];
+        } else if (arg == "-b" || arg == "--bench") {
+            if (++i >= argc) { app_print_usage(argc, argv, params); return false; }
+            params.iterations = std::stoi(argv[i]);
         } else if (arg == "-h" || arg == "--help") {
             app_print_usage(argc, argv, params);
             return false;

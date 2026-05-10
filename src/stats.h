@@ -11,9 +11,10 @@ struct yolo_stats {
     size_t mem_used;
     size_t mem_total;
     double inference_time_ms;
+    int iterations;
 
     void print(FILE* f) const;
     void save_to_file(const std::string& filename) const;
 };
 
-yolo_stats collect_stats(const std::string& model_path, struct ggml_context* ctx, double duration_ms, size_t buf_size);
+yolo_stats collect_stats(const std::string& model_path, struct ggml_context* ctx, double duration_ms, size_t buf_size, int iterations);

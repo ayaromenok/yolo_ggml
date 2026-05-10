@@ -9,6 +9,7 @@ struct app_params {
     std::string output = "../data/out/output.tga";
     std::string labels = "../data/coco/ms_coco_classnames.txt";
     std::string stats  = "../data/out/stats.txt";
+    int iterations = 1;
 };
 
 bool app_params_parse(int argc, char ** argv, app_params & params);
