@@ -1,0 +1,1098 @@
+Loading PyTorch model from ../data/ultralitics/yolo26x.pt...
+Extracted 1092 tensors.
+Initializing GGUF writer for architecture 'yolo'...
+Writing tensors...
+  Added tensor: model.0.conv.weight | shape: (96, 3, 3, 3) | dtype: float16
+  Added tensor: model.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.1.conv.weight | shape: (192, 96, 3, 3) | dtype: float16
+  Added tensor: model.1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.cv1.conv.weight | shape: (192, 192, 1, 1) | dtype: float16
+  Added tensor: model.2.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.2.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.2.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.2.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.2.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.cv2.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.2.cv2.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.2.cv2.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.2.cv2.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.2.cv2.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.2.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.cv1.conv.weight | shape: (48, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.0.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.cv2.conv.weight | shape: (48, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.0.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.cv3.conv.weight | shape: (96, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.0.cv3.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.0.cv3.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.0.cv3.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.0.cv3.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.m.0.cv1.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.m.0.cv2.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.m.1.cv1.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.0.m.1.cv2.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.cv1.conv.weight | shape: (48, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.1.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.cv2.conv.weight | shape: (48, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.1.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.cv3.conv.weight | shape: (96, 96, 1, 1) | dtype: float16
+  Added tensor: model.2.m.1.cv3.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.1.cv3.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.1.cv3.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.1.cv3.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.2.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.m.0.cv1.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.m.0.cv2.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.m.1.cv1.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv1.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv1.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv1.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv1.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.2.m.1.m.1.cv2.conv.weight | shape: (48, 48, 3, 3) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv2.bn.weight | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv2.bn.bias | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv2.bn.running_mean | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv2.bn.running_var | shape: (48,) | dtype: float16
+  Added tensor: model.2.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.3.conv.weight | shape: (384, 384, 3, 3) | dtype: float16
+  Added tensor: model.3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.cv1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.4.cv1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.4.cv1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.4.cv1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.4.cv1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.4.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.cv2.conv.weight | shape: (768, 768, 1, 1) | dtype: float16
+  Added tensor: model.4.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.4.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.4.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.4.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.4.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.cv1.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.cv2.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.cv3.conv.weight | shape: (192, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.0.cv3.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.0.cv3.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.0.cv3.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.0.cv3.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.m.0.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.m.0.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.m.1.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.0.m.1.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.cv1.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.cv2.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.cv3.conv.weight | shape: (192, 192, 1, 1) | dtype: float16
+  Added tensor: model.4.m.1.cv3.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.1.cv3.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.1.cv3.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.1.cv3.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.4.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.m.0.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.m.0.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.m.1.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.4.m.1.m.1.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.4.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.5.conv.weight | shape: (768, 768, 3, 3) | dtype: float16
+  Added tensor: model.5.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.5.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.5.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.5.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.5.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.cv1.conv.weight | shape: (768, 768, 1, 1) | dtype: float16
+  Added tensor: model.6.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.cv2.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.6.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.6.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.0.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.0.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.0.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.0.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.0.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.6.m.1.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.1.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.1.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.1.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.6.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.6.m.1.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.6.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.7.conv.weight | shape: (768, 768, 3, 3) | dtype: float16
+  Added tensor: model.7.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.7.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.7.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.7.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.7.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.cv1.conv.weight | shape: (768, 768, 1, 1) | dtype: float16
+  Added tensor: model.8.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.cv2.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.8.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.8.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.0.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.0.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.0.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.0.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.0.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.8.m.1.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.1.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.1.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.1.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.8.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.8.m.1.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.8.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.9.cv1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.9.cv1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.9.cv1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.9.cv1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.9.cv1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.9.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.9.cv2.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.9.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.9.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.9.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.9.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.9.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.cv1.conv.weight | shape: (768, 768, 1, 1) | dtype: float16
+  Added tensor: model.10.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.cv2.conv.weight | shape: (768, 768, 1, 1) | dtype: float16
+  Added tensor: model.10.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.0.attn.qkv.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.0.attn.qkv.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.attn.qkv.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.attn.qkv.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.attn.qkv.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.attn.qkv.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.0.attn.proj.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.0.attn.proj.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.proj.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.proj.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.proj.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.proj.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.0.attn.pe.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.10.m.0.attn.pe.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.pe.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.pe.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.pe.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.attn.pe.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.0.ffn.0.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.0.ffn.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.0.ffn.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.10.m.0.ffn.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.0.ffn.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.1.attn.qkv.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.1.attn.qkv.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.attn.qkv.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.attn.qkv.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.attn.qkv.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.attn.qkv.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.1.attn.proj.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.1.attn.proj.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.proj.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.proj.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.proj.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.proj.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.1.attn.pe.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.10.m.1.attn.pe.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.pe.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.pe.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.pe.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.attn.pe.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.1.ffn.0.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.10.m.1.ffn.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.10.m.1.ffn.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.10.m.1.ffn.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.10.m.1.ffn.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.cv1.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.13.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.cv2.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.13.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.13.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.0.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.0.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.0.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.0.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.0.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.13.m.1.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.1.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.1.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.1.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.13.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.13.m.1.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.13.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.cv1.conv.weight | shape: (384, 1536, 1, 1) | dtype: float16
+  Added tensor: model.16.cv1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.cv2.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.16.cv2.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv2.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv2.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv2.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.16.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.cv1.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.cv2.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.cv3.conv.weight | shape: (192, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.0.cv3.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.0.cv3.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.0.cv3.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.0.cv3.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.m.0.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.m.0.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.m.1.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.0.m.1.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.cv1.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.cv2.conv.weight | shape: (96, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.cv3.conv.weight | shape: (192, 192, 1, 1) | dtype: float16
+  Added tensor: model.16.m.1.cv3.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.1.cv3.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.1.cv3.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.1.cv3.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.16.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.m.0.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.m.0.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.m.1.cv1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.16.m.1.m.1.cv2.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv2.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv2.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv2.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv2.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.16.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.17.conv.weight | shape: (384, 384, 3, 3) | dtype: float16
+  Added tensor: model.17.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.17.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.17.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.17.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.17.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.cv1.conv.weight | shape: (768, 1152, 1, 1) | dtype: float16
+  Added tensor: model.19.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.cv2.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.19.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.19.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.0.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.0.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.0.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.0.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.0.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.0.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.0.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.cv1.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.cv2.conv.weight | shape: (192, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.cv3.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.19.m.1.cv3.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.1.cv3.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.1.cv3.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.1.cv3.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.19.m.1.cv3.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.m.0.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.m.0.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.m.1.cv1.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.19.m.1.m.1.cv2.conv.weight | shape: (192, 192, 3, 3) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv2.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv2.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv2.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv2.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.19.m.1.m.1.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.20.conv.weight | shape: (768, 768, 3, 3) | dtype: float16
+  Added tensor: model.20.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.20.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.20.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.20.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.20.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.cv1.conv.weight | shape: (768, 1536, 1, 1) | dtype: float16
+  Added tensor: model.22.cv1.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv1.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv1.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv1.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.cv2.conv.weight | shape: (768, 1152, 1, 1) | dtype: float16
+  Added tensor: model.22.cv2.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv2.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv2.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv2.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.22.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.0.cv1.conv.weight | shape: (192, 384, 3, 3) | dtype: float16
+  Added tensor: model.22.m.0.0.cv1.bn.weight | shape: (192,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv1.bn.bias | shape: (192,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv1.bn.running_mean | shape: (192,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv1.bn.running_var | shape: (192,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.0.cv2.conv.weight | shape: (384, 192, 3, 3) | dtype: float16
+  Added tensor: model.22.m.0.0.cv2.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv2.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv2.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv2.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.0.cv2.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.1.attn.qkv.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.qkv.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.qkv.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.qkv.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.qkv.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.qkv.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.1.attn.proj.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.proj.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.proj.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.proj.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.proj.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.proj.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.1.attn.pe.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.pe.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.pe.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.pe.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.pe.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.attn.pe.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.1.ffn.0.conv.weight | shape: (768, 384, 1, 1) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.22.m.0.1.ffn.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.22.m.0.1.ffn.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.0.0.conv.weight | shape: (96, 384, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.0.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.0.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.0.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.0.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.cv2.0.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.cv2.1.0.conv.weight | shape: (96, 768, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.1.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.1.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.1.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.1.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.cv2.1.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.cv2.2.0.conv.weight | shape: (96, 768, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.2.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.2.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.cv2.2.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.cv2.2.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv2.2.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.cv2.2.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.0.0.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.0.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.0.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.0.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.0.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.0.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.0.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.0.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.0.2.bias | shape: (80,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.conv.weight | shape: (768, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.1.0.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.1.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.1.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.1.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.1.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.1.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.1.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.1.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.1.2.bias | shape: (80,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.conv.weight | shape: (768, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.2.0.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.2.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.2.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.cv3.2.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.2.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.2.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.cv3.2.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.cv3.2.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.cv3.2.2.bias | shape: (80,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.conv.weight | shape: (96, 384, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.0.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.0.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv2.0.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.conv.weight | shape: (96, 768, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.1.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.1.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv2.1.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.conv.weight | shape: (96, 768, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.2.1.conv.weight | shape: (96, 96, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.1.bn.weight | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.1.bn.bias | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.1.bn.running_mean | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.1.bn.running_var | shape: (96,) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv2.2.2.weight | shape: (4, 96, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv2.2.2.bias | shape: (4,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.0.0.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.0.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.0.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.0.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.0.2.bias | shape: (80,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.conv.weight | shape: (768, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.1.0.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.1.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.1.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.1.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.1.2.bias | shape: (80,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.conv.weight | shape: (768, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.bn.weight | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.bn.bias | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.bn.running_mean | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.bn.running_var | shape: (768,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.2.0.1.conv.weight | shape: (384, 768, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.0.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.2.1.0.conv.weight | shape: (384, 1, 3, 3) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.0.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.0.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.0.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.0.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.0.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.2.1.1.conv.weight | shape: (384, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.1.bn.weight | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.1.bn.bias | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.1.bn.running_mean | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.1.bn.running_var | shape: (384,) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.1.1.bn.num_batches_tracked | shape: () | dtype: int64
+  Added tensor: model.23.one2one_cv3.2.2.weight | shape: (80, 384, 1, 1) | dtype: float16
+  Added tensor: model.23.one2one_cv3.2.2.bias | shape: (80,) | dtype: float16
+Saving GGUF file to ../data/gguf/yolo26x.gguf...
+Conversion successful!
