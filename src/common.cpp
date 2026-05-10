@@ -13,6 +13,8 @@ void app_print_usage(int /*argc*/, char ** argv, const app_params & params) {
     fprintf(stderr, "                        input image path (default: %s)\n", params.image.c_str());
     fprintf(stderr, "  -o FNAME, --output FNAME\n");
     fprintf(stderr, "                        output image path (default: %s)\n", params.output.c_str());
+    fprintf(stderr, "  -l FNAME, --labels FNAME\n");
+    fprintf(stderr, "                        labels file path (default: %s)\n", params.labels.c_str());
     fprintf(stderr, "\n");
 }
 
@@ -38,6 +40,12 @@ bool app_params_parse(int argc, char ** argv, app_params & params) {
                 return false;
             }
             params.output = argv[i];
+        } else if (arg == "-l" || arg == "--labels") {
+            if (++i >= argc) {
+                fprintf(stderr, "error: argument %s requires a value\n", arg.c_str());
+                return false;
+            }
+            params.labels = argv[i];
         } else if (arg == "-h" || arg == "--help") {
             app_print_usage(argc, argv, params);
             return false;

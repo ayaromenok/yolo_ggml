@@ -1,0 +1,5 @@
+../build/yolo_ggml \
+	-m ../data/gguf/yolo26n_F16.gguf \
+        -i ../data/img/ancelotti_zidane_2014.tga \
+        -o ../data/out/output_with_labels.tga \
+        -l ../data/coco/ms_coco_classnames.txt
