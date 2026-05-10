@@ -1,5 +1,6 @@
 build/*
 data/ultralitics/*
+data/out/*
 # Prerequisites
 *.d
 

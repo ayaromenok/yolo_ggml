@@ -9,6 +9,10 @@ void app_print_usage(int /*argc*/, char ** argv, const app_params & params) {
     fprintf(stderr, "  -h, --help            show this help message and exit\n");
     fprintf(stderr, "  -m FNAME, --model FNAME\n");
     fprintf(stderr, "                        model path (default: %s)\n", params.model.c_str());
+    fprintf(stderr, "  -i FNAME, --image FNAME\n");
+    fprintf(stderr, "                        input image path (default: %s)\n", params.image.c_str());
+    fprintf(stderr, "  -o FNAME, --output FNAME\n");
+    fprintf(stderr, "                        output image path (default: %s)\n", params.output.c_str());
     fprintf(stderr, "\n");
 }
 
@@ -22,6 +26,18 @@ bool app_params_parse(int argc, char ** argv, app_params & params) {
                 return false;
             }
             params.model = argv[i];
+        } else if (arg == "-i" || arg == "--image") {
+            if (++i >= argc) {
+                fprintf(stderr, "error: argument %s requires a value\n", arg.c_str());
+                return false;
+            }
+            params.image = argv[i];
+        } else if (arg == "-o" || arg == "--output") {
+            if (++i >= argc) {
+                fprintf(stderr, "error: argument %s requires a value\n", arg.c_str());
+                return false;
+            }
+            params.output = argv[i];
         } else if (arg == "-h" || arg == "--help") {
             app_print_usage(argc, argv, params);
             return false;
