@@ -267,26 +267,48 @@ struct yolo_model {
     }
 };
 
-bool load_model(yolo_model& model, const std::string& fname) {
-    // Try CUDA first, then CPU
-    model.backend = ggml_backend_cuda_init(0);
-    if (!model.backend) {
-        printf("CUDA not found, falling back to CPU\n");
-        model.backend = ggml_backend_cpu_init();
-    } else {
-        printf("Using CUDA backend\n");
+// Helper to initialize backend based on device string
+ggml_backend_t init_backend(const std::string& device) {
+    if (device == "CPU") {
+        return ggml_backend_cpu_init();
     }
+    
+    if (device.find("CUDA") == 0) {
+        int dev_idx = 0;
+        try {
+            if (device.length() > 4) {
+                dev_idx = std::stoi(device.substr(4));
+            }
+        } catch (...) {
+            fprintf(stderr, "Invalid CUDA device index in: %s, using 0\n", device.c_str());
+        }
+        
+        ggml_backend_t backend = ggml_backend_cuda_init(dev_idx);
+        if (backend) return backend;
+        fprintf(stderr, "Failed to initialize CUDA device %d, falling back to CPU\n", dev_idx);
+        return ggml_backend_cpu_init();
+    }
+    
+    // Default fallback
+    fprintf(stderr, "Unknown or unsupported device: %s, falling back to CPU\n", device.c_str());
+    return ggml_backend_cpu_init();
+}
 
+bool load_model(yolo_model& model, const app_params& params) {
+    const std::string& fname = params.model;
+    model.backend = init_backend(params.device);
     if (!model.backend) {
         fprintf(stderr, "Failed to initialize GGML backend\n");
         return false;
     }
+    printf("Using backend: %s\n", ggml_backend_name(model.backend));
+    printf("Loading model: %s\n", fname.c_str());
 
-    struct gguf_init_params params = {
+    struct gguf_init_params gguf_params = {
         /* .no_alloc = */ true,
         /* .ctx      = */ &model.ctx_data,
     };
-    model.ctx_gguf = gguf_init_from_file(fname.c_str(), params);
+    model.ctx_gguf = gguf_init_from_file(fname.c_str(), gguf_params);
     if (!model.ctx_gguf) return false;
 
     // Allocate tensors on the backend
@@ -361,7 +383,7 @@ int main(int argc, char ** argv) {
     if (!app_params_parse(argc, argv, params)) return 1;
 
     yolo_model model;
-    if (!load_model(model, params.model)) {
+    if (!load_model(model, params)) {
         fprintf(stderr, "Failed to load model: %s\n", params.model.c_str());
         return 1;
     }
