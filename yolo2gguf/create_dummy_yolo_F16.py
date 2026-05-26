@@ -18,5 +18,5 @@ checkpoint = {
     'optimizer': None
 }
 
-torch.save(checkpoint, 'dummy_yolo _F16.pt')
+torch.save(checkpoint, 'dummy_yolo_F16.pt')
 print("Created dummy_yolo_F16.pt")
