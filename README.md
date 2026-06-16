@@ -3,9 +3,9 @@ command line app for main development of GGML/YOLO app
 
 # Hardware
 
-## ThinkerBoard
+## TinkerBoard
 
-With latest Armbian/trixier it's no Vulkan/OpenCL acceleration, so CPU only
+With latest Armbian/trixier it's no Vulkan/OpenCL acceleration, so CPU only and 32bit
 
  | model | size, MB | perf, ms |
  |-------|----------|----------|
