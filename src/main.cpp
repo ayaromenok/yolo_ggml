@@ -1,7 +1,15 @@
 #include "common.h"
 #include "font.h"
 #include "ggml-cpu.h"
+#ifdef GGML_BACKEND_CUDA
 #include "ggml-cuda.h"
+#endif
+#ifdef GGML_BACKEND_VULKAN
+#include "ggml-vulkan.h"
+#endif
+#ifdef GGML_BACKEND_OPENCL
+#include "ggml-opencl.h"
+#endif
 #include "ggml.h"
 #include "gguf.h"
 #include "stats.h"
@@ -189,6 +197,7 @@ ggml_backend_t init_backend(const std::string &device) {
     return ggml_backend_cpu_init();
   }
 
+#ifdef GGML_BACKEND_CUDA
   if (device.find("CUDA") == 0) {
     int dev_idx = 0;
     try {
@@ -208,6 +217,40 @@ ggml_backend_t init_backend(const std::string &device) {
             dev_idx);
     return ggml_backend_cpu_init();
   }
+#endif
+
+#ifdef GGML_BACKEND_VULKAN
+  if (device.find("VULKAN") == 0) {
+    int dev_idx = 0;
+    try {
+      if (device.length() > 6) {
+        dev_idx = std::stoi(device.substr(6));
+      }
+    } catch (...) {
+      fprintf(stderr, "Invalid Vulkan device index in: %s, using 0\n",
+              device.c_str());
+    }
+
+    ggml_backend_t backend = ggml_backend_vk_init(dev_idx);
+    if (backend)
+      return backend;
+    fprintf(stderr,
+            "Failed to initialize Vulkan device %d, falling back to CPU\n",
+            dev_idx);
+    return ggml_backend_cpu_init();
+  }
+#endif
+
+#ifdef GGML_BACKEND_OPENCL
+  if (device == "OPENCL") {
+    ggml_backend_t backend = ggml_backend_opencl_init();
+    if (backend)
+      return backend;
+    fprintf(stderr,
+            "Failed to initialize OpenCL device, falling back to CPU\n");
+    return ggml_backend_cpu_init();
+  }
+#endif
 
   // Default fallback
   fprintf(stderr, "Unknown or unsupported device: %s, falling back to CPU\n",
