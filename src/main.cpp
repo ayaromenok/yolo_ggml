@@ -354,6 +354,8 @@ int main(int argc, char **argv) {
   if (!app_params_parse(argc, argv, params))
     return 1;
 
+  printf("yolo_ggml version: %s (commit: %s)\n", APP_VERSION, APP_HASH);
+
   yolo_model model;
   if (!load_model(model, params)) {
     fprintf(stderr, "Failed to load model: %s\n", params.model.c_str());

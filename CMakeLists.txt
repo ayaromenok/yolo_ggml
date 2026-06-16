@@ -16,6 +16,15 @@ add_executable(yolo_ggml
     src/stats.cpp
 )
 
+  # Application Version
+  execute_process(COMMAND git rev-list --count HEAD OUTPUT_VARIABLE GIT_COMMIT_COUNT OUTPUT_STRIP_TRAILING_WHITESPACE)
+  execute_process(COMMAND git rev-parse --short HEAD OUTPUT_VARIABLE GIT_COMMIT_HASH OUTPUT_STRIP_TRAILING_WHITESPACE)
+  
+  target_compile_definitions(yolo_ggml PRIVATE 
+      APP_VERSION="${GIT_COMMIT_COUNT}"
+      APP_HASH="${GIT_COMMIT_HASH}"
+  )
+
 # Unset cached library paths to force re-discovery when GGML_BACKEND changes
 unset(GGML_LIB CACHE)
 unset(GGML_BASE_LIB CACHE)
