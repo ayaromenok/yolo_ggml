@@ -1,11 +1,4 @@
 
-### add application version:
-
-  - current # of commits
-  - build date?
-  - git commit hash
-    
-
 ### separate module for basic image operation
   
   - scale
@@ -20,3 +13,14 @@ default config (1600x1200):
     mode: stream
   - port: 8081
     mode: snapshot
+
+i.e. `curl -o snapshot.jpeg http://192.168.1.224:8081` just give a current snapshot
+
+
+### probably use STB image
+
+```
+// Define the compilation flags
+#define STB_IMAGE_IMPLEMENTATION
+#define STBI_ONLY_JPEG
+```
