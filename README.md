@@ -3,13 +3,13 @@ command line app for main development of GGML/YOLO app
 
 # build
 
-`git clone https://github.com/ayaromenok/yolo_ggml.git`
-`cd yolo_ggml`
-`mkdir build`
-`cd build`
-`cmake -DGGML_BACKEND=VULKAN ../`
+- `git clone https://github.com/ayaromenok/yolo_ggml.git`
+- `cd yolo_ggml`
+- `mkdir build`
+- `cd build`
+- `cmake -DGGML_BACKEND=VULKAN ../`
 
-BackEnd can be CUDA, CPU, VULKAN, OPENCL
+BackEnd can be `CUDA`, `CPU`, `VULKAN`, `OPENCL`
 
 # Hardware
 
